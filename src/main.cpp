@@ -11,10 +11,13 @@
 #include "Bullet.h"
 #include "UserShip.h"
 #include "EnemyShip.h"
+#include <filesystem>
 using namespace std;
 
 #include <SFML/Graphics.hpp>
 using namespace sf;
+
+
 
 int main() {
 
@@ -30,25 +33,25 @@ int main() {
 
 
     Texture enemyShip1;
-    if (!enemyShip1.loadFromFile("data/EnemyShip1.png")) {
-        cerr << "Error Loading Texture";
+    if (!enemyShip1.loadFromFile("C:\\Users\\uhrma\\source\\repos\\BattleStarGalagaUpdated\\data\\EnemyShip1.png")) {
+        cerr << "Error Loading Texture, check directory";
         return -1;
     }
 
     Texture enemyShip2;
-    if (!enemyShip2.loadFromFile("data/EnemyShip2.png")) {
+    if (!enemyShip2.loadFromFile("C:\\Users\\uhrma\\source\\repos\\BattleStarGalagaUpdated\\data\\EnemyShip2.png")) {
         cerr << "Error Loading Texture";
         return -1;
     }
 
     Texture userShipTexture;
-    if (!userShipTexture.loadFromFile("data/MainShip.png")) {
+    if (!userShipTexture.loadFromFile("C:\\Users\\uhrma\\source\\repos\\BattleStarGalagaUpdated\\data\\MainShip.png")) {
         cerr << "Error Loading Texture";
         return -1;
     }
 
     Texture enemyShip3;
-    if (!enemyShip3.loadFromFile("data/EnemyShip3.png")) {
+    if (!enemyShip3.loadFromFile("C:\\Users\\uhrma\\source\\repos\\BattleStarGalagaUpdated\\data\\EnemyShip3.png")) {
         cerr << "Error Loading Texture";
         return -1;
     }
@@ -113,7 +116,8 @@ int main() {
                     enemyVector[i].incrementTimesKilled(); //makes the enemy  attack more frequently.
                     score++;
                     if (!activeBullets[i].isLaser()) {
-                        activeBullets.erase(activeBullets.begin() + i); //destroy the bullet as long as it isn't a laser.
+                        activeBullets.erase(activeBullets.begin() + i); //destroy the bullet as long as it isn't a laser.aa
+                        
                     }
                 }
 
@@ -123,7 +127,7 @@ int main() {
         for (int i = 0; i < enemyVector.size(); i++) {
             if (enemyVector[i].isOffScreen()) { //check if the ship is on screen, deactivate if not
                 enemyVector[i].deactivate();
-            }a
+            }
             if (!enemyVector[i].isActive()) { //if the enemy is inactive, decrease it's death cooldown
                 enemyVector[i].decrementDeathCD();
             }
