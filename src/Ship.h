@@ -10,27 +10,28 @@
 #include <time.h>
 #include <iomanip>
 
-using namespace std;
 
 #include <SFML/Graphics.hpp>
-using namespace sf;
+
 
 class Ship {
 private:
 	int _health;
-	double[2] _velocity; //will be scaled based on the resolution of the screen
-	int[2] _position; //will be scaled based on the resolution of the screen
-	Sprite _shipSprite;
-	Texture _texture;
+	std::pair<double, double> _velocity; //will be scaled based on the resolution of the screen
+	std::pair<double, double> _position; //will be scaled based on the resolution of the screen
+	sf::Sprite _shipSprite;
+
 
 public:
-	Ship(int[2] startingPosition, double[2] startingVelocity);
+	Ship(std::pair<double,double> sPos, std::pair<double,double> sVel, int health, sf::Texture &tex);
 	int getHealth() const;
-	double[2] getVelocity() const;
-	double[2] getPosition() const;
-	void setPosition(double[2] newPosition);
-	void setVelocity(double[2] newVelocity);
+	std::pair<double,double> getVelocity() const;
+	std::pair<double,double> getPosition() const;
+	void setPosition(double, double);
+	void setVelocity(double, double);
+	void setHealth(int);
 	void move();
-	Sprite getSprite() const;
-	void setSpriteTexture(Texture &tex);
+	sf::Sprite getSprite() const;
 };
+
+#endif //SFML_TEMPLATE_SHIP_H

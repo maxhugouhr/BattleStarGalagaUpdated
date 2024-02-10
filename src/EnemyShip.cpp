@@ -9,7 +9,6 @@
 #include <time.h>
 #include <iomanip>
 #include <cmath>
-using namespace std;
 
 #include <SFML/Graphics.hpp>
 using namespace sf;
