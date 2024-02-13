@@ -1,5 +1,5 @@
 //
-// Created by jingl on 6/17/2019.
+// Created by Max Uhr on 6/17/2019.
 //
 
 #include "EnemyShip.h"

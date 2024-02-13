@@ -1,9 +1,9 @@
 //
-// Created by jingl on 6/17/2019.
+// Created by Max Uhr on 6/17/2019.
 //
 
-#ifndef SFML_TEMPLATE_SHIP_H
-#define SFML_TEMPLATE_SHIP_H
+#ifndef SFML_TEMPLATE_FLYER_H
+#define SFML_TEMPLATE_FLYER_H
 #include <iostream>
 #include <vector>
 #include <string>
@@ -13,20 +13,21 @@
 
 #include <SFML/Graphics.hpp>
 
+//The Flyer class is the backbone of any moving object including ships, bullets, bombs, etc. 
 
-class Ship {
-private:
+class Flyer {
+protected:
 
 	int _health;
 	std::pair<double, double> _velocity; //will be scaled based on the resolution of the screen
 	std::pair<double, double> _position; //will be scaled based on the resolution of the screen
-	sf::Sprite _shipSprite;
+	sf::Sprite _sprite;
 	std::pair<double, double> _dimensions;
 
 
 public:
 
-	Ship(std::pair<double,double> sPos, std::pair<double,double> sVel, int health, sf::Texture &tex);
+	Flyer(std::pair<double,double> sPos, std::pair<double,double> sVel, int health, sf::Texture &tex);
 	int getHealth() const;
 	std::pair<double,double> getVelocity() const;
 	std::pair<double,double> getPosition() const;
@@ -39,4 +40,4 @@ public:
 	sf::Sprite getSprite() const;
 };
 
-#endif //SFML_TEMPLATE_SHIP_H
+#endif //SFML_TEMPLATE_FLYER_H
