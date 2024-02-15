@@ -6,10 +6,10 @@
 
 #include <SFML/Graphics.hpp>
 
-Projectile::getDamage() const {
+int Projectile::getDamage() const {
 	return _damage;
 }
 
-Projectile::getHealth() const {
+int Projectile::getHealth() const {
 	return _health;
 }

@@ -22,6 +22,7 @@ private:
 
 public:
 
+	Projectile();
 	int getDamage() const;
 	int getHealth() const;
 	
