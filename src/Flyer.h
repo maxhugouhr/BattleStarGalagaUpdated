@@ -27,7 +27,7 @@ protected:
 
 public:
 
-	Flyer(std::pair<double,double> sPos, std::pair<double,double> sVel, int health, sf::Texture &tex);
+	Flyer(std::pair<double, double> startPosition, std::pair<double, double> startVelocity, std::pair<double, double>startDimemsions, int health, sf::Texture& texture);
 	int getHealth() const;
 	std::pair<double,double> getVelocity() const;
 	std::pair<double,double> getPosition() const;

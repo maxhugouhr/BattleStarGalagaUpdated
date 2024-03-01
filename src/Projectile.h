@@ -25,6 +25,7 @@ public:
 	Projectile();
 	int getDamage() const;
 	int getHealth() const;
+	bool checkHit(Flyer flyer);
 	
 };
 

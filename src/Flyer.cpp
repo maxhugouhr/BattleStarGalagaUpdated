@@ -51,10 +51,10 @@ sf::Sprite Flyer::getSprite() const{
 }
 
 
-Flyer::Flyer(std::pair<double, double> sPos, std::pair<double, double> sVel, std::pair<double,double>sDim, int health, sf::Texture& tex) {
-	_position = sPos;
-	_velocity = sVel;
+Flyer::Flyer(std::pair<double, double> startPosition, std::pair<double, double> startVelocity, std::pair<double,double>startDimemsions, int health, sf::Texture& texture) {
+	_position = startPosition;
+	_velocity = startVelocity;
 	_health = health;
-	_sprite.setTexture(tex);
-	_dimensions = sDim;
+	_sprite.setTexture(texture);
+	_dimensions = startDimensions;
 }

@@ -13,3 +13,7 @@ int Projectile::getDamage() const {
 int Projectile::getHealth() const {
 	return _health;
 }
+
+bool checkHit(Flyer flyer) {
+	//needs body
+}
